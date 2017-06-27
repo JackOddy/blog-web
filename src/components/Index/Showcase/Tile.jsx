@@ -25,22 +25,29 @@ const TileBox = styled.div`
 
 const TileTitle = styled.h2`
   padding: 5px 10px 5px 10px ;
-  background-color: rgba(120, 120, 255, 0.5);
+  background-color: rgba(30, 144, 255, 0.5);
   color: rgba(255, 255, 255, 0.7);
   margin: 0;
+  margin-top: -5px;
   border-radius: 0 0 3px 0;
   font-family: nunito-semibold;
   overflow: hidden;
 `;
 
 const Blurb = styled.div`
+  padding-top: 5px;
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
   bottom: 0;
+  transition: height 1s;
   height: 20%;
   width: 100%;
   color: white;
   column-count: 2;
+    &:hover{
+      transition: height 1s;
+      height: 30%;
+    }
 `;
 
 const Teaser = styled.p`
@@ -50,8 +57,7 @@ const Teaser = styled.p`
   font-family: 'josefin sans';
 `
 
-export default ({blog}) => (
-  <ArbitrarySquare>
+export const FeatureTile =  ({blog}) => (
     <TileBox image={blog.meta.cover}>
       <Blurb>
         <TileTitle>
@@ -62,5 +68,32 @@ export default ({blog}) => (
         </Teaser>
       </Blurb>
     </TileBox>
-  </ArbitrarySquare>
+)
+
+
+const Blurb2 = styled(Blurb)`
+column-count: 1;
+height: 35px;
+    &:hover{
+      transition: height 1s;
+      height: 100px;
+    }
+`;
+
+
+const TileTitle2 = styled(TileTitle)`
+  height:auto;
+`
+
+export const Tile =  ({blog}) => (
+    <TileBox image={blog.meta.cover}>
+      <Blurb2>
+        <TileTitle2>
+          {blog.meta.title}
+        </TileTitle2>
+        <Teaser>
+        {blog.content}
+        </Teaser>
+      </Blurb2>
+    </TileBox>
 )
