@@ -37,27 +37,27 @@ const Column = styled.div`
 `;
 
 export default ({}) => (
-    <ShowBox>
+  <ShowBox>
     <Column>
-    <FeaturedBox>
-    <FeatureTile blog={blogs[1]} />
-    </FeaturedBox>
+      <FeaturedBox>
+        <FeatureTile blog={blogs[1]} />
+      </FeaturedBox>
     </Column>
     <Column>
-    <TileBox>
-    <Tile blog={blogs[2]} />
-    </TileBox>
-    <TileBox>
-    <Tile blog={blogs[3]} />
-    </TileBox>
+      <TileBox>
+        <Tile blog={blogs[2]} />
+      </TileBox>
+      <TileBox>
+        <Tile blog={blogs[3]} />
+      </TileBox>
     </Column>
     <Column>
-    <TileBox>
-    <Tile blog={blogs[0]} />
-    </TileBox>
-    <TileBox>
-    <Tile blog={blogs[4]} />
-    </TileBox>
+      <TileBox>
+        <Tile blog={blogs[0]} />
+      </TileBox>
+      <TileBox>
+        <Tile blog={blogs[4]} />
+      </TileBox>
     </Column>
-    </ShowBox>
+  </ShowBox>
 )
