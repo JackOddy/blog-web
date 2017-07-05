@@ -18,6 +18,12 @@ const Box = styled.div`
   position: absolute;
 `;
 
+const colors = {
+    blue: "rgb(102,217,239)"
+  , pink: "rgb(249,38,114)"
+  , orange: "rgb(253,151,31)"
+  , green: "rgb(166,226,46)" 
+}
 
 storiesOf('Blog Feature Component', module)
   .add('List with multiple colors', () => (
@@ -36,9 +42,24 @@ storiesOf('Blog View', module)
       <Blog color="rgb(102,217,239)" />
     </Box>
   ))
-  .add('Blog with Body', () => (
+  .add('Blue Blog with Body', () => (
     <Box>
-      <Blog body={markDown} color="rgb(102,217,239)" />
+      <Blog body={markDown} color={colors.blue}/>
+    </Box>
+  ))
+  .add('Pink Blog with Body', () => (
+    <Box>
+      <Blog body={markDown} color={colors.pink} />
+    </Box>
+  ))
+  .add('Orange Blog with Body', () => (
+    <Box>
+      <Blog body={markDown} color={colors.orange} />
+    </Box>
+  ))
+  .add('Green Blog with Body', () => (
+    <Box>
+      <Blog body={markDown} color={colors.green} />
     </Box>
   ));
 storiesOf('Mark Down parsing', module)
