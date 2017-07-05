@@ -6,12 +6,14 @@ import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 
 import blogs from '../testData/testBlog';
+import markDown from './mdExample';
 import Feature from '../src/components/Index/Feature/index';
 import Blog from '../src/components/Blog/index';
+import { compile } from '../src/MarkDownCompiler';
 
 const Box = styled.div`
   padding: 20px;
-  width: 90%;
+  width: 80%;
   height: 100%;
   position: absolute;
 `;
@@ -20,11 +22,11 @@ const Box = styled.div`
 storiesOf('Blog Feature Component', module)
   .add('List with multiple colors', () => (
     <Box>
-      <Feature color={"rgb(249,38,114)"}/>
-      <Feature color={"rgb(102,217,239)"}/>
-      <Feature color={"rgb(166,226,46)"}/>
-      <Feature color={"rgb(253,151,31)"}/>
-      <Feature color={"rgb(249,38,114)"}/>
+      <Feature color="rgb(249,38,114)"/>
+      <Feature color="rgb(102,217,239)"/>
+      <Feature color="rgb(166,226,46)"/>
+      <Feature color="rgb(253,151,31)"/>
+      <Feature color="rgb(249,38,114)"/>
     </Box>
   ));
 
@@ -33,35 +35,43 @@ storiesOf('Blog View', module)
     <Box>
       <Blog color="rgb(102,217,239)" />
     </Box>
+  ))
+  .add('Blog with Body', () => (
+    <Box>
+      <Blog body={markDown} color="rgb(102,217,239)" />
+    </Box>
   ));
-
 storiesOf('Mark Down parsing', module)
   .add('Example', () => (
-    <div> yet to be completed </div>
+    <div>{compile(markDown).tree}</div>
   ))
   .add('<h1 />', () => (
-    <div> yet to be completed </div>
+    <div>{compile('# Testing a Header Component').tree}</div>
   ))
   .add('<h2 />', () => (
-    <div> yet to be completed </div>
+    <div>{compile('## Testing a Header Component').tree}</div>
   ))
   .add('<h3 />', () => (
-    <div> yet to be completed </div>
+    <div>{compile('### Testing a Header Component').tree}</div>
   ))
   .add('<h4 />', () => (
-    <div> yet to be completed </div>
+    <div>{compile('#### Testing a Header Component').tree}</div>
   ))
   .add('<h5 />', () => (
-    <div> yet to be completed </div>
+    <div>{compile('##### Testing a Header Component').tree}</div>
   ))
   .add('<h6 />', () => (
-    <div> yet to be completed </div>
+    <div>{compile('###### Testing a Header Component').tree}</div>
   ))
   .add('<hr />', () => (
-    <div> yet to be completed </div>
+    <div>
+      {compile('# Title with Horizonal Rule\n ---').tree}
+    </div>
   ))
   .add('<p />', () => (
-    <div> yet to be completed </div>
+    <div>
+      {compile('simple p tag for simple text').tree}
+    </div>
   ))
   .add('<ul />', () => (
     <div> yet to be completed </div>

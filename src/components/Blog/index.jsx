@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import {FeaturePane, FeatureBlurb} from '../Index/Feature/index';
+import { compile } from '../../MarkDownCompiler';
 
 const Header = styled.div`
   height: 600px;
   position: relative;
-  margin-bottom: -5%;
 `;
 
 const Title = styled.h1`
@@ -32,11 +32,13 @@ const Text = styled.p`
   color: rgb(39,40,34);
   font-family: nunito-extralight;
 `;
+const Body = styled.div`
+`
 
 const Meta = ({label, data}) => (
   <Text>{label}: {data}</Text>
 )
-export default ({color}) =>(
+export default ({color, body}) =>(
   <div>
     <Header>
       <FeaturePane color={color}>
@@ -46,5 +48,8 @@ export default ({color}) =>(
         </MetaLine>
       </FeaturePane>
     </Header>
+    <Body>
+      {body && compile(body).tree}
+    </Body>
   </div>
 )
