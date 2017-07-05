@@ -46,18 +46,8 @@ inque Herculis super formis, vultus trepidantum operosa agger hostisque omnes
 paelicis? Deus cuncta deoque umbras volucres serpentum Ceyca: iactata tela
 dolores, illa sum iubet dederunt, et?
 
-    sectorTechnologyNavigation(onHypertextTemplate);
-    rosetta.graphics_resolution(server, defaultPpiChecksum(
-            bashPlugCdn.serial_property_unix.snmp_us_soft(tagMetaPassword,
-            barcraftAccess, input)), pcbFooter);
-    error.marginFlowchartStack(70, output, exif);
-    var stickCut = localhost + 1;
-    var menu = https_ipv_digital(moodle) + 1;
-
-Armentis conanti. Saxo **cum non Peliaeque** Alba errat in manes regia quam;
-vide ferarum. Ebur summam erat, regi et undis ut salibus deinde; amantem non
-tergo? Numina iussit Hesperien culpa in iuvenis amat; arce **toto** tertius.
-Torusque sed omni nulla et gratia prior, ipse rabies.r
-***
+\`\`\`ruby
+  :symbol = Constant.method('string') / 100
+\`\`\`
 `
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, {injectGlobal} from 'styled-components';
 
 export const h1 = styled.h1`
   padding: 5px;
@@ -51,3 +51,20 @@ export const li = styled.li`
   font-family: nunito-extralight;
   font-weight: 100;
 `;
+
+injectGlobal`
+   code{
+       font-family: 'monaco';
+       font-size: small;
+   }
+   pre{
+       background-color: rgb(39,40,34);
+       padding: 20px;
+       color: white;
+   }
+`;
+export const code = styled.code`
+`;
+export const codespan = styled.span`
+  background: red;
+`

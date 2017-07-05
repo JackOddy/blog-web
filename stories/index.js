@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, {injectGlobal}from 'styled-components';
 
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
@@ -7,6 +7,8 @@ import { linkTo } from '@storybook/addon-links';
 
 import blogs from '../testData/testBlog';
 import markDown from './mdExample';
+import mdCode from './mdCodeExample';
+import goCode from './goExample';
 import Feature from '../src/components/Index/Feature/index';
 import Blog from '../src/components/Blog/index';
 import { compile } from '../src/MarkDownCompiler';
@@ -24,6 +26,7 @@ const colors = {
   , orange: "rgb(253,151,31)"
   , green: "rgb(166,226,46)" 
 }
+
 
 storiesOf('Blog Feature Component', module)
   .add('List with multiple colors', () => (
@@ -60,6 +63,16 @@ storiesOf('Blog View', module)
   .add('Green Blog with Body', () => (
     <Box>
       <Blog body={markDown} color={colors.green} />
+    </Box>
+  ))
+  .add('Green Blog with codeSnippet', () => (
+    <Box>
+      <Blog body={goCode} color={colors.green} />
+    </Box>
+  ))
+  .add('Pink Blog with codeSnippet', () => (
+    <Box>
+      <Blog body={goCode} color={colors.pink} />
     </Box>
   ));
 storiesOf('Mark Down parsing', module)
@@ -103,3 +116,20 @@ storiesOf('Mark Down parsing', module)
   .add('<li />', () => (
     <div> yet to be completed </div>
   ));
+
+storiesOf('Code Highlighting', module)
+  .add('Code Block (js)', () => (
+      <div>
+          {compile(mdCode).tree}
+      </div>
+      ))
+  .add('Code Block (go)', () => (
+      <div>
+          {compile(goCode).tree}
+      </div>
+      ))
+  .add('inline code', () => (
+      <div>
+          {compile("if you want to log something then type `console.log('hello')` into your program").tree}
+      </div>
+      ))
