@@ -33,6 +33,11 @@ const Text = styled.p`
   font-family: nunito-extralight;
 `;
 const Body = styled.div`
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: rgba(255,255,255,0.7);
+  transform: translate(10px,10px);
 `
 
 const Meta = ({label, data}) => (

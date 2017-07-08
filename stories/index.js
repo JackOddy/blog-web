@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, {injectGlobal}from 'styled-components';
+import styled, {injectGlobal, ThemeProvider}from 'styled-components';
 
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
@@ -9,34 +9,96 @@ import blogs from '../testData/testBlog';
 import markDown from './mdExample';
 import mdCode from './mdCodeExample';
 import goCode from './goExample';
-import Feature from '../src/components/Index/Feature/index';
+import Feature from '../src/components/Index/Feature';
 import Blog from '../src/components/Blog/index';
+import NavButton from '../src/components/NavButton'
+import {HomeItem, EmailItem, LinkedInItem, TwitterItem} from '../src/components/NavButton/NavItems';
 import { compile } from '../src/MarkDownCompiler';
 
-const Box = styled.div`
+const LimitBox = styled.div`
   padding: 20px;
   width: 80%;
   height: 100%;
   position: absolute;
 `;
 
+const Box = ({children}) =>(
+    <ThemeProvider theme={colors}>
+        <LimitBox>
+            {children}
+        </LimitBox>
+    </ThemeProvider>
+
+);
+
+injectGlobal`
+  body{
+    background-color: #CDC3B7;
+  }
+`;
+
 const colors = {
-    blue: "rgb(102,217,239)"
-  , pink: "rgb(249,38,114)"
-  , orange: "rgb(253,151,31)"
-  , green: "rgb(166,226,46)" 
+    blue: 'rgb(102,217,239)'
+  , pink: 'rgb(249,38,114)'
+  , orange: 'rgb(253,151,31)'
+  , green: 'rgb(166,226,46)'
+  , grey: 'rgb(39,40,34)'
 }
 
+storiesOf('Nav Button', module)
+    .add('Closed Nav', () => (
+        <Box>
+            <NavButton shadow={colors.grey} color={colors.pink} />
+        </Box>
+    ))
+    .add('Open Nav', () => (
+        <Box>
+            <NavButton open shadow={colors.grey} color={colors.pink} />
+        </Box>
+    ))
+    .add('HomeItem', () => (
+        <Box>
+            <HomeItem/>
+        </Box>
+    ))
+    .add('MailItem', () => (
+        <Box>
+            <EmailItem/>
+        </Box>
+    ))
+    .add('LinkedInItem', () => (
+        <Box>
+            <LinkedInItem/>
+        </Box>
+    ))
+    .add('TwitterItem', () => (
+        <Box>
+            <TwitterItem/>
+        </Box>
+    ))
+
+const NavBox = styled.div`
+  width: 95%;
+  padding: 20px;
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+`;
 
 storiesOf('Blog Feature Component', module)
   .add('List with multiple colors', () => (
-    <Box>
-      <Feature color="rgb(249,38,114)"/>
-      <Feature color="rgb(102,217,239)"/>
-      <Feature color="rgb(166,226,46)"/>
-      <Feature color="rgb(253,151,31)"/>
-      <Feature color="rgb(249,38,114)"/>
-    </Box>
+    <div>
+      <NavBox>
+        <NavButton open shadow={colors.grey} color={colors.pink} />
+      </NavBox>
+      <Box>
+        <Feature color="rgb(249,38,114)"/>
+        <Feature color="rgb(102,217,239)"/>
+        <Feature color="rgb(166,226,46)"/>
+        <Feature color="rgb(253,151,31)"/>
+        <Feature color="rgb(249,38,114)"/>
+      </Box>
+    </div>
   ));
 
 storiesOf('Blog View', module)
@@ -130,6 +192,6 @@ storiesOf('Code Highlighting', module)
       ))
   .add('inline code', () => (
       <div>
-          {compile("if you want to log something then type `console.log('hello')` into your program").tree}
+          {compile("`console.log('hello')`").tree}
       </div>
       ))

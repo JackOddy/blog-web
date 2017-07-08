@@ -27,14 +27,20 @@ export const FeatureBlurb = styled.div`
     position: absolute;
     bottom: 0;
     left: 40px;
-    background-color:white; 
+    background-color:white;
+    padding-bottom: 5px;
     `;
 
 const BlurbShadow = styled(FeatureBlurb)`
     height: 60px;
     z-index: -1;
     box-shadow: 20px 20px rgb(39,40,34);
-`
+`;
+const BlurbBorder= styled(BlurbShadow)`
+    height: 60px;
+    z-index: -1;
+    box-shadow: 20px 20px rgb(39,40,34);
+`;
 const BlurbTitle = styled.h3`
   margin: 10px;
   padding: 5px;
@@ -55,18 +61,13 @@ const BlurbUnderline = styled.hr`
 border: 1px solid rgb(39,40,34);
 `;
 
-const JauntyBorder = styled.div`
-position: absolute;
-  height: 100%;
-  width: 100%;
-  padding: 5px;
-  margin: -5px; 
-  border: solid 1px rgb(249, 38, 114);
-  transform: rotate(5deg);
-    &:nth-child(2){
-      transform: rotate(-2deg)
-      border-color: rgb(102, 217, 239)
-    }
+const VerticalRule = styled.div`
+    height: 100%;
+    width: 2px;
+    top: 0;
+    position: absolute;
+    margin-left: 0px;
+    background-color: rgb(39,40,34);
 `;
 
 export default ({color}) => (
