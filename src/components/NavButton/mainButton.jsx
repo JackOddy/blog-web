@@ -52,7 +52,9 @@ const ButtonShadow = styled.div`
 `;
 
 const NavContainer = styled.div`
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 60px;
 `;
 
