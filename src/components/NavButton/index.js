@@ -21,7 +21,7 @@ export default class extends React.Component {
     render(){
         console.log(this.state)
         return(
-                <NavButton onClick={this.changeMenu} color={this.props.color}>
+                <NavButton onClick={this.changeMenu} open={this.state.open} color={this.props.color}>
                 { NavItems.map( Item => <Item open={this.state.open} />) }
             </NavButton>
         )

@@ -29,6 +29,7 @@ export const compile = marksy({
     // ul: props => <MD.ul {...props} />,
     li: props => <MD.li {...props} />,
     code: props => <MD.code {...props} />,
-    codespan: props => <MD.codespan {...props} />
+    codespan: props => <MD.codespan {...props} />,
+    a: props => <MD.a {...props} />
   }
 })

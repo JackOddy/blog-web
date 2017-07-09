@@ -17,9 +17,10 @@ import { compile } from '../src/MarkDownCompiler';
 
 const LimitBox = styled.div`
   padding: 20px;
+  padding-left: 10px;
+  margin: auto;
   width: 80%;
   height: 100%;
-  position: absolute;
 `;
 
 const Box = ({children}) =>(
@@ -192,6 +193,6 @@ storiesOf('Code Highlighting', module)
       ))
   .add('inline code', () => (
       <div>
-          {compile("`console.log('hello')`").tree}
+          {compile("if you want to log something then typing `console.log('hello')` will do that - no problem!").tree}
       </div>
       ))

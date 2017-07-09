@@ -33,12 +33,12 @@ const Text = styled.p`
   font-family: nunito-extralight;
 `;
 const Body = styled.div`
-  padding-top: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-  background-color: rgba(255,255,255,0.7);
-  transform: translate(10px,10px);
-`
+  padding: 10px 10px 10px 15px;
+  font-size: large;
+  background-color: rgb(255,255,255);
+  box-shadow: 20px -20px rgb(39,40,34);
+  margin: 20px 0px 0px 0px;
+`;
 
 const Meta = ({label, data}) => (
   <Text>{label}: {data}</Text>

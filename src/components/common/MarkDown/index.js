@@ -5,7 +5,7 @@ export const h1 = styled.h1`
   padding: 5px;
   color: rgb(39,40,34);
   font-family: nunito-extralight;
-  font-weight: 100;
+  font-weight: 800;
 `;
 export const h2 = styled.h2`
   padding: 5px;
@@ -53,10 +53,6 @@ export const li = styled.li`
 `;
 
 injectGlobal`
-   code{
-       font-family: 'monaco';
-       font-size: small;
-   }
    pre{
        background-color: rgb(39,40,34);
        padding: 20px;
@@ -64,7 +60,28 @@ injectGlobal`
    }
 `;
 export const code = styled.code`
+  font-family: 'monaco';
+  font-size: small;
+  background-color: rgb(39,40,34);
+  color: #66d9ef;
+  padding: 0px 2px 1px 2px;
 `;
 export const codespan = styled.span`
-  background: red;
-`
+`;
+export const a = styled.a`
+  position: relative;
+  color: rgb(39,40,34);
+  font-weight: bold;
+  text-decoration: none;
+  font-style: italic;
+  &:after{
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    left: 0;
+    bottom: 2px;
+    border-bottom: solid 2px #66d9ef;
+    z-index: -1;
+  }
+`;
