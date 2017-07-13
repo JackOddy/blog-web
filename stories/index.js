@@ -7,8 +7,10 @@ import { linkTo } from '@storybook/addon-links';
 
 import blogs from '../testData/testBlog';
 import markDown from './mdExample';
+import Editor from '../src/components/Editor';
 import mdCode from './mdCodeExample';
 import goCode from './goExample';
+import mdExample from './mdExample';
 import Feature from '../src/components/Index/Feature';
 import Blog from '../src/components/Blog/index';
 import NavButton from '../src/components/NavButton'
@@ -29,7 +31,6 @@ const Box = ({children}) =>(
             {children}
         </LimitBox>
     </ThemeProvider>
-
 );
 
 injectGlobal`
@@ -196,3 +197,11 @@ storiesOf('Code Highlighting', module)
           {compile("if you want to log something then typing `console.log('hello')` will do that - no problem!").tree}
       </div>
       ))
+
+const parsed = compile(mdExample).tree
+storiesOf('md blog editor', module)
+  .add('editor component', () => (
+    <Box>
+      <Editor raw={mdExample} parsed={parsed}/>
+    </Box>
+  ))

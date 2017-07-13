@@ -43,7 +43,7 @@ Da hospite nescio! Ardor conripimus os nymphae iamque carina. Ixion ferre ara,
 legit taceo **aperite** parvo [cecidisse
 iunctissima](http://tereoet.io/et.html). Enim Aonides, est stravit **quod**,
 inque Herculis super formis, vultus trepidantum operosa agger hostisque omnes
-paelicis? Deus cuncta deoque umbras volucres serpentum Ceyca: iactata tela
+paelicis? Deus \`cuncta({}, null)\` deoque umbras volucres serpentum Ceyca: iactata tela
 dolores, illa sum iubet dederunt, et?
 
 \`\`\`ruby

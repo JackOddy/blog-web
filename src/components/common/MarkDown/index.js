@@ -57,11 +57,14 @@ injectGlobal`
        background-color: rgb(39,40,34);
        padding: 20px;
        color: white;
+       margin: 10px 40px;
+       font-size: 15px;
+   }
+   code{
+     font-family: monaco;
    }
 `;
 export const code = styled.code`
-  font-family: 'monaco';
-  font-size: small;
   background-color: rgb(39,40,34);
   color: #66d9ef;
   padding: 0px 2px 1px 2px;
