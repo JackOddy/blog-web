@@ -1,7 +1,7 @@
 export default (state = 0, action) => {
   switch (action.type) {
-    case 'add':
-      return state + 1;
+    case 'SCROLL':
+      return action.scroll;
     default:
       return state;
   }
